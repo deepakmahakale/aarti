@@ -4,10 +4,7 @@
 const CACHE_NAME = 'aarti-sangrah-v1';
 const urlsToCache = [
     '/',
-    '/assets/css/critical.css',
-    '/assets/js/search.js',
-    '{{ "/assets/images/logo.png" | relative_url }}',
-    'https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:wght@400;700&family=Inter:wght@400;500;600;700&display=swap'
+    '/assets/js/search.js'
 ];
 
 // Install event
