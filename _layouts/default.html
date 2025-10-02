@@ -17,6 +17,105 @@
         .search-highlight {
             background-color: #fef08a;
         }
+
+        /* Hide print-only elements on screen */
+        .print-brand,
+        .print-title,
+        .print-content {
+            display: none;
+        }
+
+        /* Print styles */
+        @media print {
+            /* Show print elements */
+            .print-brand,
+            .print-title,
+            .print-content {
+                display: block;
+            }
+            /* Hide everything by default */
+            * {
+                visibility: hidden;
+            }
+
+            /* Show only print-specific elements */
+            .print-brand,
+            .print-title,
+            .print-content,
+            .print-brand *,
+            .print-title *,
+            .print-content * {
+                visibility: visible;
+            }
+
+            /* Reset page layout for print */
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 14pt;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20pt;
+            }
+
+            /* Brand styling for print */
+            .print-brand {
+                text-align: center;
+                font-size: 18pt;
+                font-weight: bold;
+                margin-bottom: 20pt;
+                padding-bottom: 10pt;
+                border-bottom: 2px solid #333;
+            }
+
+            /* Title styling for print */
+            .print-title {
+                text-align: center;
+                font-size: 16pt;
+                font-weight: bold;
+                margin-bottom: 20pt;
+            }
+
+            /* Content styling for print */
+            .print-content {
+                font-size: 12pt;
+                line-height: 1.8;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Prevent page breaks and control layout */
+            .print-brand,
+            .print-title {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            .print-content {
+                page-break-before: avoid;
+                page-break-inside: auto;
+                orphans: 3;
+                widows: 3;
+            }
+
+            .print-content * {
+                page-break-inside: avoid;
+            }
+
+            /* Remove any background colors/gradients */
+            .print-content,
+            .print-content * {
+                background: transparent !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            /* Ensure content fits on page */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+        }
     </style>
 
     {% if page.layout == 'aarti' %}

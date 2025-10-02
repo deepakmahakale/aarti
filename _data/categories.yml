@@ -58,6 +58,12 @@
   description: Sun God Aartis
   color: from-yellow-400 to-red-500
 
+- name: चालीसा
+  slug: chalisa
+  icon: 📿
+  description: Devotional Chalisa
+  color: from-amber-400 to-orange-500
+
 - name: इतर आरत्या
   slug: other
   icon: 🕉️
