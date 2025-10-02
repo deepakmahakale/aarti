@@ -174,7 +174,7 @@ This project is licensed under the MIT License. The devotional content is in the
 ## Support
 
 For technical issues, please open an issue on GitHub.
-For content suggestions, contact: info@aartisangrah.com
+<!-- For content suggestions, contact: aarti collection -->
 
 ---
 

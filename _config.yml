@@ -27,9 +27,9 @@ locale: mr_IN
 
 # SEO optimization
 author: Aarti Sangrah Team
-twitter:
-  username: aartisangrah
-  card: summary_large_image
+# twitter:
+#   username: aarti collection
+#   card: summary_large_image
 
 facebook:
   app_id:
@@ -38,11 +38,11 @@ facebook:
 
 logo: /assets/images/logo.png
 
-social:
-  name: Aarti Sangrah
-  links:
-    - https://www.facebook.com/aartisangrah
-    - https://www.twitter.com/aartisangrah
+# social:
+#   name: Aarti Collection
+#   links:
+#     - https://www.facebook.com/aarticollection
+#     - https://www.twitter.com/aarticollection
 
 # Default front matter
 defaults:
