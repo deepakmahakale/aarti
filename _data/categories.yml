@@ -1,0 +1,65 @@
+- name: गणपती आरती
+  slug: ganpati
+  icon: 🐘
+  description: Lord Ganesha Aartis
+  color: from-orange-400 to-rose-500
+
+- name: देवी आरती
+  slug: devi
+  icon: 🌺
+  description: Goddess Devi Aartis
+  color: from-pink-400 to-purple-500
+
+- name: विठोबा आरती
+  slug: vitthal
+  icon: 🙏
+  description: Lord Vitthal Aartis
+  color: from-blue-400 to-indigo-500
+
+- name: शिव आरती
+  slug: shiva
+  icon: 🔱
+  description: Lord Shiva Aartis
+  color: from-gray-400 to-blue-500
+
+- name: कृष्ण आरती
+  slug: krishna
+  icon: 🦚
+  description: Lord Krishna Aartis
+  color: from-blue-400 to-purple-500
+
+- name: हनुमान आरती
+  slug: hanuman
+  icon: 🐒
+  description: Lord Hanuman Aartis
+  color: from-red-400 to-orange-500
+
+- name: राम आरती
+  slug: ram
+  icon: 🏹
+  description: Lord Rama Aartis
+  color: from-green-400 to-blue-500
+
+- name: लक्ष्मी आरती
+  slug: lakshmi
+  icon: 🪙
+  description: Goddess Lakshmi Aartis
+  color: from-yellow-400 to-orange-500
+
+- name: सरस्वती आरती
+  slug: saraswati
+  icon: 📚
+  description: Goddess Saraswati Aartis
+  color: from-blue-400 to-purple-500
+
+- name: सूर्य आरती
+  slug: surya
+  icon: ☀️
+  description: Sun God Aartis
+  color: from-yellow-400 to-red-500
+
+- name: इतर आरत्या
+  slug: other
+  icon: 🕉️
+  description: Other Devotional Aartis
+  color: from-purple-400 to-pink-500

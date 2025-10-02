@@ -1,0 +1,20 @@
+<header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-orange-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+            <a href="{{ '/' | relative_url }}" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-rose-500 rounded-xl flex items-center justify-center text-2xl">
+                    🙏
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold text-gray-900 marathi-text">{{ site.title | split: ' | ' | first }}</h1>
+                    <p class="text-xs text-gray-600 hidden sm:block">Devotional Collection</p>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-orange-600 font-medium transition marathi-text">मुख्यपृष्ठ</a>
+                <a href="#categories" class="text-gray-700 hover:text-orange-600 font-medium transition marathi-text">श्रेणी</a>
+                <a href="#about" class="text-gray-700 hover:text-orange-600 font-medium transition marathi-text">आमच्याबद्दल</a>
+            </nav>
+        </div>
+    </div>
+</header>

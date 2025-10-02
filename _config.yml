@@ -1,0 +1,55 @@
+# Site settings
+title: आरती संग्रह | Aarti Sangrah
+description: Complete collection of Marathi Aartis with lyrics, audio and video
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  aartis:
+    output: true
+    permalink: /aartis/:name/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Language settings
+lang: mr
+locale: mr_IN
+
+# SEO optimization
+author: Aarti Sangrah Team
+twitter:
+  username: aartisangrah
+  card: summary_large_image
+
+facebook:
+  app_id:
+  publisher:
+  admins:
+
+logo: /assets/images/logo.png
+
+social:
+  name: Aarti Sangrah
+  links:
+    - https://www.facebook.com/aartisangrah
+    - https://www.twitter.com/aartisangrah
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "aartis"
+    values:
+      layout: "aarti"
+      author: "Aarti Sangrah"
+      image: "/assets/images/default-aarti.jpg"

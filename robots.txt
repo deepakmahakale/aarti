@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Block search parameter pages
+Disallow: /*?*
+
+# Allow important pages
+Allow: /aartis/
+Allow: /category/
+
+# Block temporary or test pages
+Disallow: /test/
+Disallow: /temp/
+
+# Crawl delay
+Crawl-delay: 1

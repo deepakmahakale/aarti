@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'mr' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% include seo.html %}
+    {% include performance.html %}
+
+    <style>
+        body {
+            font-family: 'Inter', 'Tiro Devanagari Marathi', serif;
+        }
+        .marathi-text {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+        .search-highlight {
+            background-color: #fef08a;
+        }
+    </style>
+
+    {% if page.layout == 'aarti' %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "{{ page.title_marathi }}",
+        "alternateName": "{{ page.title_translit }}",
+        "inLanguage": "mr",
+        "url": "{{ page.url | absolute_url }}",
+        "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ page.author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.logo | absolute_url }}"
+            }
+        },
+        "description": "{{ page.meta_description | default: page.title_en }}",
+        "keywords": "{{ page.keywords }}",
+        {% if page.audio %}
+        "encoding": {
+            "@type": "MediaObject",
+            "contentUrl": "{{ page.audio | absolute_url }}",
+            "encodingFormat": "audio/mpeg"
+        },
+        {% endif %}
+        "genre": "Devotional Music",
+        "inLanguage": "mr"
+    }
+    </script>
+    {% endif %}
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 min-h-screen">
+    {% include header.html %}
+
+    <main>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    {% if page.layout == 'home' %}
+    <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* Critical CSS for above-the-fold content */
+body {
+    font-family: 'Inter', 'Tiro Devanagari Marathi', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fef7cd 0%, #fed7aa 50%, #fecdd3 100%);
+    min-height: 100vh;
+}
+
+.marathi-text {
+    font-family: 'Tiro Devanagari Marathi', serif;
+}
+
+/* Header styles */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #fed7aa;
+}
+
+/* Loading spinner */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #f97316;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Critical responsive utilities */
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.font-bold { font-weight: 700; }
+.text-gray-900 { color: #111827; }
+
+/* Hide non-critical content initially */
+.non-critical {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.non-critical.loaded {
+    opacity: 1;
+}

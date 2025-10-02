@@ -1,0 +1,72 @@
+<!-- Performance optimizations -->
+
+<!-- Critical CSS inline -->
+<style>
+{% capture critical_css %}{% include critical.css %}{% endcapture %}
+{{ critical_css | strip }}
+</style>
+
+<!-- Preload critical resources -->
+<link rel="preload" href="{{ '/assets/js/search.js' | relative_url }}" as="script">
+
+<!-- Font optimization -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Non-critical CSS with media="print" trick -->
+<link rel="stylesheet" href="https://cdn.tailwindcss.com" media="print" onload="this.media='all'; this.onload=null;">
+<noscript>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+</noscript>
+
+<!-- Service Worker for caching -->
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(error) {
+            console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+}
+</script>
+
+<!-- Search data for JavaScript -->
+<script>
+window.aartisData = [
+    {% for aarti in site.aartis %}
+    {
+        title: {{ aarti.title_marathi | jsonify }},
+        translit: {{ aarti.title_translit | jsonify }},
+        url: {{ aarti.url | relative_url | jsonify }},
+        category: {{ aarti.category | jsonify }},
+        tags: {{ aarti.tags | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+</script>
+
+<!-- Resource hints -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+<link rel="prefetch" href="{{ '/sitemap.xml' | relative_url }}">
+
+<!-- Viewport optimization -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- Performance timing -->
+<script>
+window.addEventListener('load', function() {
+    if (window.performance && window.performance.timing) {
+        const perf = window.performance.timing;
+        const loadTime = perf.loadEventEnd - perf.navigationStart;
+
+        // Send analytics (if implemented)
+        if (window.gtag) {
+            gtag('event', 'timing_complete', {
+                name: 'load',
+                value: loadTime
+            });
+        }
+    }
+});
+</script>

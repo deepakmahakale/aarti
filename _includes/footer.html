@@ -1,0 +1,43 @@
+<footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-rose-500 rounded-xl flex items-center justify-center text-2xl">
+                        🙏
+                    </div>
+                    <h5 class="font-bold text-xl marathi-text">{{ site.title | split: ' | ' | first }}</h5>
+                </div>
+                <p class="text-gray-400 text-sm">{{ site.description }}</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg mb-4 marathi-text">द्रुत दुवे</h5>
+                <ul class="space-y-2">
+                    <li><a href="{{ '/' | relative_url }}" class="text-gray-400 hover:text-white transition text-sm marathi-text">मुख्यपृष्ठ</a></li>
+                    <li><a href="#categories" class="text-gray-400 hover:text-white transition text-sm marathi-text">श्रेणी</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm marathi-text">आमच्याबद्दल</a></li>
+                    <li><a href="{{ '/sitemap.xml' | relative_url }}" class="text-gray-400 hover:text-white transition text-sm">Sitemap</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg mb-4 marathi-text">संपर्क</h5>
+                <p class="text-gray-400 text-sm">Email: info@aartisangrah.com</p>
+                <div class="mt-4 flex gap-3">
+                    {% if site.social.links %}
+                        {% for link in site.social.links %}
+                            {% if link contains 'facebook' %}
+                                <a href="{{ link }}" class="text-gray-400 hover:text-white transition">📘</a>
+                            {% elsif link contains 'twitter' %}
+                                <a href="{{ link }}" class="text-gray-400 hover:text-white transition">🐦</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title | split: ' | ' | first }}. सर्व हक्क राखीव.</p>
+            <p class="mt-2">Generated with Jekyll • Hosted with ❤️</p>
+        </div>
+    </div>
+</footer>

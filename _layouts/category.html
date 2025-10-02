@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {% assign current_category = site.data.categories | where: "slug", page.category | first %}
+
+    <header class="text-center mb-12">
+        <div class="text-6xl mb-4">{{ current_category.icon }}</div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 marathi-text">
+            {{ current_category.name }}
+        </h1>
+        <p class="text-lg text-gray-600">{{ current_category.description }}</p>
+    </header>
+
+    {% assign category_aartis = site.aartis | where: "category", page.category %}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for aarti in category_aartis %}
+        <a href="{{ aarti.url | relative_url }}" class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all overflow-hidden">
+            <div class="bg-gradient-to-br {{ current_category.color }} p-8 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                <div class="relative">
+                    <div class="text-5xl mb-3">{{ current_category.icon }}</div>
+                    <h3 class="text-2xl font-bold mb-1 marathi-text">{{ aarti.title_marathi }}</h3>
+                    <p class="text-white/80 text-sm">{{ aarti.title_translit }}</p>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-600 mb-3 text-sm">{{ aarti.title_en }}</p>
+                <div class="flex gap-2 flex-wrap">
+                    {% for tag in aarti.tags %}
+                        <span class="bg-gray-50 text-gray-700 text-xs px-3 py-1.5 rounded-full font-medium">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% if aarti.audio %}
+                <div class="mt-3 flex items-center gap-2 text-sm text-gray-500">
+                    🎵 Audio Available
+                </div>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {% if category_aartis.size == 0 %}
+    <div class="text-center py-12">
+        <div class="text-6xl mb-4">🔍</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2 marathi-text">आरत्या आढळल्या नाहीत</h3>
+        <p class="text-gray-600">या श्रेणीत अद्याप आरत्या जोडल्या गेल्या नाहीत.</p>
+    </div>
+    {% endif %}
+
+    <div class="mt-12 text-center">
+        <a href="{{ '/' | relative_url }}" class="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-xl hover:shadow-lg transition font-medium marathi-text">
+            ← मुख्यपृष्ठावर परत
+        </a>
+    </div>
+</div>
