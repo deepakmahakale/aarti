@@ -27,9 +27,9 @@ layout: default
         <div class="flex flex-wrap justify-center gap-2 mb-6">
             {% for category in site.data.categories %}
                 {% if category.slug == page.category %}
-                    <span class="bg-gradient-to-r {{ category.color }} text-white px-4 py-2 rounded-full text-sm font-medium">
+                    <a href="{{ '/category/' | append: category.slug | append: '/' | relative_url }}" class="bg-gradient-to-r {{ category.color }} text-white px-4 py-2 rounded-full text-sm font-medium">
                         {{ category.icon }} {{ category.name }}
-                    </span>
+                    </a>
                 {% endif %}
             {% endfor %}
 

@@ -13,7 +13,7 @@ permalink: /:categories/:title/
 collections:
   aartis:
     output: true
-    permalink: /aarti/:name/
+    permalink: /:name/
 
 # Plugins
 plugins:

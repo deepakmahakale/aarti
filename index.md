@@ -62,20 +62,7 @@ lang: mr
     </div>
 </section>
 
-<section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center marathi-text">श्रेणी</h3>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {% for category in site.data.categories %}
-            <a href="{{ '/category/' | append: category.slug | append: '/' | relative_url }}" class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all text-center group">
-                <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">{{ category.icon }}</div>
-                <h4 class="font-bold text-base sm:text-lg text-gray-900 marathi-text">{{ category.name }}</h4>
-                <p class="text-xs sm:text-sm text-gray-600 mt-1">{{ category.description }}</p>
-                {% assign category_count = site.aartis | where: "category", category.slug | size %}
-                <p class="text-xs text-orange-600 mt-2 font-medium">{{ category_count }} आरत्या</p>
-            </a>
-        {% endfor %}
-    </div>
-</section>
+{% include category_listing.html %}
 
 <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
