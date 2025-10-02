@@ -66,7 +66,7 @@ lang: mr
     <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center marathi-text">श्रेणी</h3>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {% for category in site.data.categories %}
-            <a href="/category/{{ category.slug }}/" class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all text-center group">
+            <a href="{{ '/category/' | append: category.slug | append: '/' | relative_url }}" class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all text-center group">
                 <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">{{ category.icon }}</div>
                 <h4 class="font-bold text-base sm:text-lg text-gray-900 marathi-text">{{ category.name }}</h4>
                 <p class="text-xs sm:text-sm text-gray-600 mt-1">{{ category.description }}</p>

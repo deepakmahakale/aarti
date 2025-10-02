@@ -2,7 +2,7 @@
 title: आरती संग्रह | Aarti Sangrah
 description: Complete collection of Marathi Aartis with lyrics, audio and video
 url: "https://deepakmahakale.com"
-baseurl: ""
+baseurl: "/aarti"
 
 # Build settings
 markdown: kramdown
