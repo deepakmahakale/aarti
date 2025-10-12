@@ -56,3 +56,15 @@ header {
 .non-critical.loaded {
     opacity: 1;
 }
+
+.prose-lg .marathi-text {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+}
+
+@media (max-width: 640px) {
+    .prose-lg .marathi-text {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+}
